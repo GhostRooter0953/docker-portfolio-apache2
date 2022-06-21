@@ -1,0 +1,9 @@
+sed -i -e 's/\r$//' *.sh
+
+либо
+
+sudo apt install dos2unix
+
+dos2unix *.sh
+
+###dos2unix: converting file script.sh to Unix format...
