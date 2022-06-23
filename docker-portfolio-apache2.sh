@@ -7,7 +7,7 @@ echo -e "\033[32m"
 read -p "Имя контейнера: " name
 read -p "На каком порту: " port
 echo -e "\033[33m - Запускается docker container с именем $name на порту $port."
-docker run -dit --name $name -p $port:80 $image >/dev/null && echo -e "\033[32m - Готово." && sleep 1.5 || echo -e "\033[31m - Есть ошибка"
+docker run -dit --name $name -p $port:80 -v $PWD/portfolio:/usr/local/apache2/htdocs/ $image >/dev/null && echo -e "\033[32m - Готово." && sleep 1.5 || echo -e "\033[31m - Есть ошибка"
 echo -e "\033[33m"
 docker ps
 echo
